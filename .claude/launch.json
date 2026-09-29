@@ -1,6 +1,6 @@
 {
   "version": "0.0.1",
   "configurations": [
-    { "name": "site-live", "runtimeExecutable": "/bin/sh", "runtimeArgs": ["-c", "cd \"/Users/Niveh_Marnitz/Desktop/USA Landig Page/site\" && exec python3 -m http.server 4321"], "port": 4321 }
+    { "name": "site-live", "runtimeExecutable": "/bin/sh", "runtimeArgs": ["-c", "cd \"/Users/nivehmarnitz/Downloads/USA Landig Page/site\" && exec python3 -m http.server 4321"], "port": 4321 }
   ]
 }
