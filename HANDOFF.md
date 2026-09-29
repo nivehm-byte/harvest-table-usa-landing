@@ -1,4 +1,4 @@
-# Handoff (29 Sep 2026, v2)
+# Handoff (29 Sep 2026, v2, repo set up)
 
 ## Where things stand
 v2 of `site/index.html` (white, AG1 layout, Multi Collagen Granules as hero) is done and tested in the browser at 1440, 375 and 360 wide:
@@ -31,5 +31,12 @@ measured below 4.5:1. No horizontal scroll at 360.
 - "Halal certified" is in the trust strip because every Amazon listing claims it. Confirm or remove.
 - Vegan Protein Powder shows its Amazon rating (5.0 from 2 reviews). Keep it, or hide it until there are more?
 
+## Repo
+Private GitHub repo, whole project: https://github.com/nivehm-byte/harvest-table-usa-landing
+(branch `main`, remote `origin` over SSH). The project folder is its own repo, nested inside the
+home-folder repo at `~`; always run git from this folder. `gh` and Homebrew are not installed;
+SSH push works, so none are needed for day-to-day commits.
+
 ## Next session starts with
-Niveh will have installed Homebrew and the GitHub CLI (`gh auth login`). Run `gh auth status`, then set up a private repo and push (ask: `site/` only or the whole project). Drop in whatever content has arrived, then run Lighthouse (README 15.1) now that images are local.
+Drop in whatever content has arrived (placeholder list above), then run Lighthouse (README 15.1)
+now that images are local. Commit and push when done.
