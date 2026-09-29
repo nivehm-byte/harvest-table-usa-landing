@@ -37,6 +37,12 @@ Private GitHub repo, whole project: https://github.com/nivehm-byte/harvest-table
 home-folder repo at `~`; always run git from this folder. `gh` and Homebrew are not installed;
 SSH push works, so none are needed for day-to-day commits.
 
+Live on GitHub Pages: https://nivehm-byte.github.io/harvest-table-usa-landing/
+`.github/workflows/pages.yml` publishes only `site/` on every push to `main`, so the brand guide
+and project notes are not served. The repo itself is public (Pages needs that on the free plan),
+so those files can still be read on github.com. Staging only: the canonical and og tags still wait
+on the live domain (placeholder 13).
+
 ## Next session starts with
 Drop in whatever content has arrived (placeholder list above), then run Lighthouse (README 15.1)
 now that images are local. Commit and push when done.
