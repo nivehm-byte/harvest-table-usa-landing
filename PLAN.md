@@ -7,6 +7,7 @@
 | Reference measured (drinkag1.com Next Gen Pouch, 1024 wide) | Done |
 | Pack colours sampled from Amazon listing images | Done |
 | First full build, all 11 sections plus sticky bar | Done |
+| Lighthouse on the live page (README 15.1) | Done, re-run after every media drop-in |
 | Content supply (see HANDOFF.md placeholder list) | Open |
 | Stakeholder review (Niveh, Michelle) | Open |
 | Launch gate (README section 16.6) | Open |
@@ -36,3 +37,14 @@
 | 2026-09-29 | 15 images generated with Higgsfield GPT Image 2.5 (high quality), packs from Amazon listing photos as references. All images now local JPEGs in `site/assets/img/` (3.5 MB total) | Client direction; removes the Amazon CDN dependency |
 | 2026-09-29 | Mobile tabs: two-column grid with names wrapping, pill rows above 480px | Two full names cannot share a 360px row without shrinking text (brief forbids) |
 | 2026-09-29 | Desktop hero fits the first screen: header 84 → 68px, gallery square capped at `100svh - 220px`, 64px thumbnails, tighter buy column, claim small print moved below the detail accordion (same section). Measured with Multi (5 benefits): buy box bottom 780 @1440×900, 780 @1470×840, 734 @1366×768, 696 @1280×720 | Client: "first section viewable on the first screen of desktop". Fact chips hide below 760px tall (the facts repeat in benefits and What's Inside) |
+| 2026-09-29 | Gallery square reserved on `.g-track` (was on each slide); Google Fonts stylesheet loaded non-blocking (`media="print"` swapped on load); thumb `object-fit` applied at every width | Lighthouse found CLS 0.75 on mobile: the gallery started 40px tall and grew to 363px when the first image arrived, pushing the buy column down. The font stylesheet blocked first paint by about 1.3s |
+
+## Lighthouse log
+Lighthouse 12.8.2 CLI, headless Chrome on Niveh's Mac, default throttling (mobile: simulated slow 4G,
+4x CPU; desktop: `--preset=desktop`). Live GitHub Pages URL, default product (Multi Collagen Granules).
+GitHub Pages sets a 10 minute cache lifetime; that audit stays flagged until the production host.
+
+| Date | Build | Mobile perf | Desktop perf | A11y | Best practices | SEO | Notes |
+|---|---|---|---|---|---|---|---|
+| 2026-09-29 | `0cc5ba9` | 61, 62 | 90, 78 | 100 | 96 (mobile), 100 | 100 | CLS 0.75 mobile, 0.27 in one desktop run; fonts render blocking 1.3s |
+| 2026-09-29 | `310c644` | 97, 99, 98 | 98, 100, 93 | 100 | 100 | 100 | Mobile LCP 2.1 to 2.4s, CLS 0 to 0.05. Left: WebP and responsive sizes (about 900 KB, placeholder 7), cache lifetime (host) |
